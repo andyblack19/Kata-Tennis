@@ -31,5 +31,17 @@ namespace Kata_Tennis
 
             Assert.That(_game.Score(), Is.EqualTo(expectedScore));
         }
+
+        [Test]
+        public void Scoring_3_points_each_is_deuce()
+        {
+            for (var i = 0; i < 3; i++)
+                _game.AddPointForPlayer1();
+
+            for (var i = 0; i < 3; i++)
+                _game.AddPointForPlayer2();
+
+            Assert.That(_game.Score(), Is.EqualTo("Deuce"));
+        }
     }
 }

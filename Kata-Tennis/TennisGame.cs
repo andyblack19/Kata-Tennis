@@ -7,10 +7,10 @@
 
         public string Score()
         {
-            var player1Score = FormatPointsAsTennisScore(_player1Points);
-            var player2Score = FormatPointsAsTennisScore(_player2Points);
+            if (_player1Points == 3 && _player2Points == 3)
+                return "Deuce";
 
-            return $"{player1Score} - {player2Score}";
+            return $"{FormatPointsAsTennisScore(_player1Points)} - {FormatPointsAsTennisScore(_player2Points)}";
         }
 
         public void AddPointForPlayer1()
