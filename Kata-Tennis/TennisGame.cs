@@ -26,7 +26,7 @@
         }
 
         private bool IsDeuce() => _player1Points == 3 && _player2Points == 3;
-        private bool Player1HasWon() => _player1Points == 4 && _player2Points <= 2;
+        private bool Player1HasWon() => _player1Points >= 4 && _player1Points - _player2Points == 2;
         private bool Player2HasWon() => _player2Points == 4 && _player1Points <= 2;
         private bool Player1HasAdvantage() => _player1Points >= 4 && _player1Points - _player2Points == 1;
         private bool Player2HasAdvantage() => _player2Points >= 4 && _player2Points - _player1Points == 1;
