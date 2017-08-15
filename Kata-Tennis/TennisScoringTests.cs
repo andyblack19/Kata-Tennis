@@ -12,17 +12,18 @@ namespace Kata_Tennis
             _game = new TennisGame();
         }
 
-        [Test]
-        public void Start_of_game_score_is_love_love()
+        [TestCase(0, 0, "Love - Love")]
+        [TestCase(1, 0, "Fifteen - Love")]
+        [TestCase(0, 1, "Love - Fifteen")]
+        public void Score_is_formatted_based_on_number_of_points(int player1Points, int player2Points, string expectedScore)
         {
-            Assert.That(_game.Score(), Is.EqualTo("Love - Love"));
-        }
+            for (var i = 0; i < player1Points; i++)
+                _game.AddPointForPlayer1();
 
-        [Test]
-        public void Player1_has_single_point_is_fifteen_love()
-        {
-            _game.AddPointForPlayer1();
-            Assert.That(_game.Score(), Is.EqualTo("Fifteen - Love"));
+            for (var i = 0; i < player2Points; i++)
+                _game.AddPointForPlayer2();
+
+            Assert.That(_game.Score(), Is.EqualTo(expectedScore));
         }
     }
 }
