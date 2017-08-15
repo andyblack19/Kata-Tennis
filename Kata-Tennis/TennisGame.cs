@@ -16,6 +16,9 @@
             if (Player1HasAdvantage())
                 return "Advantage Player 1";
 
+            if (Player2HasAdvantage())
+                return "Advantage Player 2";
+
             if (IsDeuce())
                 return "Deuce";
 
@@ -26,6 +29,7 @@
         private bool Player1HasWon() => _player1Points == 4 && _player2Points <= 2;
         private bool Player2HasWon() => _player2Points == 4 && _player1Points <= 2;
         private bool Player1HasAdvantage() => _player1Points >= 4 && _player1Points - _player2Points == 1;
+        private bool Player2HasAdvantage() => _player2Points >= 4 && _player2Points - _player1Points == 1;
 
         public void AddPointForPlayer1()
         {
