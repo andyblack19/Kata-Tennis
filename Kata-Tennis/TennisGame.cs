@@ -25,7 +25,15 @@
 
         private static string FormatPointsAsTennisScore(int points)
         {
-            return points == 1 ? "Fifteen" : "Love";
+            switch (points)
+            {
+                case 1:
+                    return "Fifteen";
+                case 2:
+                    return "Thirty";
+                default:
+                    return "Love";
+            }
         }
     }
 }
