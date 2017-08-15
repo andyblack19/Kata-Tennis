@@ -10,6 +10,9 @@
             if (Player1HasWon())
                 return "Player 1 Wins";
 
+            if (Player2HasWon())
+                return "Player 2 Wins";
+
             if (IsDeuce())
                 return "Deuce";
 
@@ -18,6 +21,7 @@
 
         private bool IsDeuce() => _player1Points == 3 && _player2Points == 3;
         private bool Player1HasWon() => _player1Points == 4 && _player2Points <= 2;
+        private bool Player2HasWon() => _player2Points == 4 && _player1Points <= 2;
 
         public void AddPointForPlayer1()
         {

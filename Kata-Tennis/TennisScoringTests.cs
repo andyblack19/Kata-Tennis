@@ -23,6 +23,7 @@ namespace Kata_Tennis
         [TestCase(2, 2, "Thirty - Thirty")]
         [TestCase(3, 3, "Deuce")]
         [TestCase(4, 2, "Player 1 Wins")]
+        [TestCase(2, 4, "Player 2 Wins")]
         public void Score_is_formatted_based_on_number_of_points(int player1Points, int player2Points, string expectedScore)
         {
             for (var i = 0; i < player1Points; i++)
