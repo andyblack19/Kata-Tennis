@@ -21,6 +21,7 @@ namespace Kata_Tennis
         [TestCase(0, 3, "Love - Forty")]
         [TestCase(1, 1, "Fifteen - Fifteen")]
         [TestCase(2, 2, "Thirty - Thirty")]
+        [TestCase(3, 3, "Deuce")]
         public void Score_is_formatted_based_on_number_of_points(int player1Points, int player2Points, string expectedScore)
         {
             for (var i = 0; i < player1Points; i++)
@@ -30,18 +31,6 @@ namespace Kata_Tennis
                 _game.AddPointForPlayer2();
 
             Assert.That(_game.Score(), Is.EqualTo(expectedScore));
-        }
-
-        [Test]
-        public void Scoring_3_points_each_is_deuce()
-        {
-            for (var i = 0; i < 3; i++)
-                _game.AddPointForPlayer1();
-
-            for (var i = 0; i < 3; i++)
-                _game.AddPointForPlayer2();
-
-            Assert.That(_game.Score(), Is.EqualTo("Deuce"));
         }
     }
 }
