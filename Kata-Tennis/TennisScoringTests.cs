@@ -15,8 +15,10 @@ namespace Kata_Tennis
         [TestCase(0, 0, "Love - Love")]
         [TestCase(1, 0, "Fifteen - Love")]
         [TestCase(2, 0, "Thirty - Love")]
+        [TestCase(3, 0, "Forty - Love")]
         [TestCase(0, 1, "Love - Fifteen")]
         [TestCase(0, 2, "Love - Thirty")]
+        [TestCase(0, 3, "Love - Forty")]
         [TestCase(1, 1, "Fifteen - Fifteen")]
         [TestCase(2, 2, "Thirty - Thirty")]
         public void Score_is_formatted_based_on_number_of_points(int player1Points, int player2Points, string expectedScore)
